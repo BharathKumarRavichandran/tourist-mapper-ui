@@ -121,3 +121,22 @@ class PoliceDetailsView(View):
 				places_short.append(model_to_dict(place))
 
 		return places_short
+
+@method_decorator(JsonResponseDecorator, name='dispatch')
+class HospitalDetailsView(View):
+
+	def post(self, request):
+		print(request)
+		lat = float(request.POST.get('latitude'))
+		lng = float(request.POST.get('longitude'))
+
+		places_short = []
+
+		places = Hospital.objects.all()
+
+		for index, place in enumerate(places):
+			distance = haversine(place.longitude,place.latitude,lng,lat)
+			if(floor(distance)<10):
+				places_short.append(model_to_dict(place))
+
+		return places_short
