@@ -1,6 +1,4 @@
 from django.db import models
-from phonenumber_field.modelfields import PhoneNumberField
-
 
 class Guide(models.Model):
 	guide_id        = models.AutoField(primary_key=True)
