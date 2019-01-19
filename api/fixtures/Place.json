@@ -36,9 +36,9 @@
 },
 {
     "model": "api.Place",
-    "pk": 1,
+    "pk": 3,
     "fields": {
-		"place_id": 1,
+		"place_id": 3,
 		"place_name": "Gateway of India",
 		"place_type": "Monument",
 		"latitude": 18.9220,
