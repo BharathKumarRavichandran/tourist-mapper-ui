@@ -53,31 +53,33 @@ var appendParkingLotDetails = function(){
 			'longitude': lngStr
 		},
 		success: function (data) {
+			numberOfAvailableSlots = 0;
+			numberOfOccupiedSlots = 10;
 			if(data.status_code==200){
 				$("#nearestParkingLot").html(data.data[0]['place_name']);
 				numberOfAvailableSlots = data.data[0]['slots_occupied'].split(',').length;
 				numberOfOccupiedSlots = parseInt(data.data[0]['no_of_lots'])-numberOfAvailableSlots;
-				if ($('#ampiechart2').length) {
-					var chart = AmCharts.makeChart("ampiechart2", {
-						"type": "pie",
-						"theme": "dark",
-						"labelRadius": -65,
-						"labelText": "[[title]]%",
-						"dataProvider": [{
-							"title": "Available ",
-							"value": numberOfAvailableSlots
-						}, {
-							"title": "Occupied ",
-							"value": numberOfOccupiedSlots
-						}],
-						"titleField": "title",
-						"valueField": "value",
-						"export": {
-							"enabled": false
-						},
-						"color": "#fff"
-					});
-				}
+			}
+			if ($('#ampiechart2').length) {
+				var chart = AmCharts.makeChart("ampiechart2", {
+					"type": "pie",
+					"theme": "dark",
+					"labelRadius": -65,
+					"labelText": "[[title]]%",
+					"dataProvider": [{
+						"title": "Available ",
+						"value": numberOfAvailableSlots
+					}, {
+						"title": "Occupied ",
+						"value": numberOfOccupiedSlots
+					}],
+					"titleField": "title",
+					"valueField": "value",
+					"export": {
+						"enabled": false
+					},
+					"color": "#fff"
+				});
 			}
 		}
 	});
