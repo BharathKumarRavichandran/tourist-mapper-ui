@@ -40,7 +40,7 @@ class GuideInfoView(View):
 
 		for index, guide in enumerate(guides):
 			distance = haversine(guide.longitude,guide.latitude,lng,lat)
-			if(distance<10):
+			if(distance<20):
 				guides_short.append(model_to_dict(guide))
 
 		return guides_short
@@ -60,7 +60,7 @@ class PlaceAdditionalView(View):
 
 		for index, place in enumerate(places):
 			distance = haversine(place.longitude,place.latitude,lng,lat)
-			if(floor(distance)<10):
+			if(floor(distance)<20):
 				places_short.append(model_to_dict(place))
 
 		return places_short
@@ -79,7 +79,7 @@ class BookingServicesView(View):
 
 		for index, place in enumerate(places):
 			distance = haversine(place.longitude,place.latitude,lng,lat)
-			if(floor(distance)<10):
+			if(floor(distance)<20):
 				places_short.append(model_to_dict(place))
 
 		return places_short
@@ -94,11 +94,11 @@ class ParkingInfoView(View):
 
 		places_short = []
 
-		places = Place.objects.all()
+		places = ParkingLot.objects.all()
 
 		for index, place in enumerate(places):
 			distance = haversine(place.longitude,place.latitude,lng,lat)
-			if(floor(distance)<10):
+			if(floor(distance)<20):
 				places_short.append(model_to_dict(place))
 
 		return places_short
@@ -113,11 +113,12 @@ class PoliceDetailsView(View):
 
 		places_short = []
 
-		places = Place.objects.all()
+		places = PoliceStation.objects.all()
 
 		for index, place in enumerate(places):
 			distance = haversine(place.longitude,place.latitude,lng,lat)
-			if(floor(distance)<10):
+			print(distance)
+			if(floor(distance)<20):
 				places_short.append(model_to_dict(place))
 
 		return places_short
@@ -136,7 +137,7 @@ class HospitalDetailsView(View):
 
 		for index, place in enumerate(places):
 			distance = haversine(place.longitude,place.latitude,lng,lat)
-			if(floor(distance)<10):
+			if(floor(distance)<20):
 				places_short.append(model_to_dict(place))
 
 		return places_short
