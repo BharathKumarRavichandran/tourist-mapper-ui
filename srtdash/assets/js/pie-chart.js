@@ -113,7 +113,7 @@ if ($('#ampiechart1').length) {
 /*-------------- 1 Pie chart amchart end ------------*/
 
 /*-------------- 2 Pie chart amchart start ------------*/
-if ($('#ampiechart2').length) {
+/*if ($('#ampiechart2').length) {
     var chart = AmCharts.makeChart("ampiechart2", {
         "type": "pie",
         "theme": "light",
@@ -133,7 +133,7 @@ if ($('#ampiechart2').length) {
         },
         "color": "#fff"
     });
-}
+}*/
 /*-------------- 2 Pie chart amchart end ------------*/
 
 /*-------------- 3 Pie chart amchart start ------------*/
