@@ -7,14 +7,14 @@ from . import views
 app_name = 'api'
 
 urlpatterns = [
-        path('guide/info/', views.GuideInfoView.as_view() , name='guide-info'),
+        path('guide/details/', views.GuideInfoView.as_view() , name='guide-details'),
 
-        path('place/additionalinfo/', views.PlaceAdditionalView.as_view(), name='place-info'),
+        path('place/details/', views.PlaceAdditionalView.as_view(), name='place-details'),
         
-        path('bookingservices/', views.BookingServicesView.as_view(), name='booking-services'),
+        path('bookingservices/details', views.BookingServicesView.as_view(), name='booking-services-details'),
         
-        path('parkinglot/details/', views.ParkingInfoView.as_view(), name='parking-info'),
+        path('parkinglot/details/', views.ParkingInfoView.as_view(), name='parking-details'),
         
-        path('place/police-details/', views.PoliceDetailsView.as_view(), name='police-details'),
+        path('police/details/', views.PoliceDetailsView.as_view(), name='police-details'),
 
 ]
