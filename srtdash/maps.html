@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="assets/css/metisMenu.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!--LeafLets-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <!-- amchart css -->
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <!-- others css -->
@@ -24,6 +27,9 @@
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
+<style>
+#mapid { height: 500px; }
+</style>
 <body>
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -355,59 +361,11 @@
             <!-- page title area end -->
             <div class="main-content-inner">
                 <div class="row">
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Animations along lines</h4>
-                                <div id="mapamchart1"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Map with curved lines</h4>
-                                <div id="mapamchart2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Zooming to Countries Map</h4>
-                                <div id="mapamchart3"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Map With Patterns</h4>
-                                <div id="mapamchart4"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Capitals map</h4>
-                                <div id="mapamchart5"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 mt-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title">Map with dynamic Pie charts</h4>
-                                <div id="mapamchart6"></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="col-lg-12 mt-5">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="header-title">Google Map</h4>
-                                <div id="google_map"></div>
+                                <h4 class="header-title">Map</h4>
+                                <div id="mapid"></div>
                             </div>
                         </div>
                     </div>
@@ -601,248 +559,88 @@
             </div>
         </div>
     </div>
+
+
     <!-- offset area end -->
     <!-- maps Resources -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbeBYsZSDkbIyfUkoIw1Rt38eRQOQQU0o"></script>
+    
     <script>
-    function initialize() {
-        var e = {
-                zoom: 15,
-                scrollwheel: !1,
-                center: new google.maps.LatLng(40.712764, -74.005667),
-                styles: [{
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#1d2c4d"
-                        }]
-                    },
-                    {
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                                "color": "#8ec3b9"
-                            },
-                            {
-                                "saturation": -100
-                            },
-                            {
-                                "weight": 2
-                            }
-                        ]
-                    },
-                    {
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#1a3646"
-                        }]
-                    },
-                    {
-                        "featureType": "administrative.country",
-                        "elementType": "geometry.stroke",
-                        "stylers": [{
-                            "color": "#4b6878"
-                        }]
-                    },
-                    {
-                        "featureType": "administrative.country",
-                        "elementType": "labels.text",
-                        "stylers": [{
-                                "saturation": 30
-                            },
-                            {
-                                "lightness": -100
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    },
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#64779e"
-                        }]
-                    },
-                    {
-                        "featureType": "administrative.province",
-                        "elementType": "geometry.stroke",
-                        "stylers": [{
-                            "color": "#4b6878"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape.man_made",
-                        "elementType": "geometry.stroke",
-                        "stylers": [{
-                            "color": "#334e87"
-                        }]
-                    },
-                    {
-                        "featureType": "landscape.natural",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#023e58"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#283d6a"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#6f9ba5"
-                        }]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#1d2c4d"
-                        }]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "geometry.fill",
-                        "stylers": [{
-                            "color": "#023e58"
-                        }]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#3C7680"
-                        }]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#304a7d"
-                        }]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#98a5be"
-                        }]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#1d2c4d"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#2c6675"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry.stroke",
-                        "stylers": [{
-                            "color": "#255763"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#b0d5ce"
-                        }]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#023e58"
-                        }]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "labels",
-                        "stylers": [{
-                            "visibility": "off"
-                        }]
-                    },
-                    {
-                        "featureType": "transit",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#98a5be"
-                        }]
-                    },
-                    {
-                        "featureType": "transit",
-                        "elementType": "labels.text.stroke",
-                        "stylers": [{
-                            "color": "#1d2c4d"
-                        }]
-                    },
-                    {
-                        "featureType": "transit.line",
-                        "elementType": "geometry.fill",
-                        "stylers": [{
-                            "color": "#283d6a"
-                        }]
-                    },
-                    {
-                        "featureType": "transit.station",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#3a4762"
-                        }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [{
-                            "color": "#0e1626"
-                        }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry.fill",
-                        "stylers": [{
-                            "color": "#0e0e26"
-                        }]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "labels.text.fill",
-                        "stylers": [{
-                            "color": "#4e6d70"
-                        }]
-                    }
-                ]
-            },
+	var mymap = L.map('mapid').setView([13.011760, 80.221481], 17);
 
-            l = new google.maps.Map(document.getElementById("google_map"), e);
-        new google.maps.Marker({ position: l.getCenter(), animation: google.maps.Animation.BOUNCE, map: l })
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 20,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox.streets'
+    }).addTo(mymap);
+
+    var officeIcon = L.icon({
+    iconUrl: "./assets/images/icons-new/office-building.png",
+    iconSize: [38, 38],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    // shadowUrl: 'my-icon-shadow.png', 
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+    });
+
+    var myIcon = L.icon({
+    iconUrl: "./assets/images/icons-new/current-loc.png",
+    iconSize: [38, 38],
+    iconAnchor: [22, 94],
+    popupAnchor: [-3, -76],
+    // shadowUrl: 'my-icon-shadow.png', 
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+    });
+
+    var userlat,userlng;
+    // var marker1 = L.marker([13.011760, 80.221481],{icon: officeIcon}).addTo(mymap);
+    // marker1.bindPopup("<b style='color:red;'>I am a circle.</b>");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(showPosition,showError);
+        } else {
+           console.log( "Geolocation is not supported by this browser.");
+        }
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    function showPosition(position) {
+        console.log(position.coords.latitude,position.coords.longitude);
+        userlat = position.coords.latitude;
+        userlng = position.coords.longitude;
+
+        L.marker(new L.latLng(userlat,userlng),{icon: myIcon}).addTo(mymap);
+        console.log(userlat,userlng)
+    }
+    // L.marker.locate({setView: true})
+
+    document.onload = getLocation();
+
+    function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+        console.log( "User denied the request for Geolocation.")
+        break;
+        case error.POSITION_UNAVAILABLE:
+        console.log( "Location information is unavailable.")
+        break;
+        case error.TIMEOUT:
+        console.log( "The request to get user location timed out.")
+        break;
+        case error.UNKNOWN_ERROR:
+        console.log("An unknown error occurred.")
+        break;
+  }
+}
+
+
+
+    // }
+
+    // google.maps.event.addDomListener(window, 'load', initialize);
     </script>
     <!-- jquery latest version -->
     <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
@@ -854,6 +652,9 @@
     <script src="assets/js/jquery.slimscroll.min.js"></script>
     <script src="assets/js/jquery.slicknav.min.js"></script>
 
+    
+
+
     <!-- start amchart js -->
     <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
     <script src="https://www.amcharts.com/lib/3/pie.js"></script>
@@ -864,7 +665,7 @@
     <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <!-- maps js -->
-    <script src="assets/js/maps.js"></script>
+    <!-- <script src="assets/js/maps.js"></script> -->
     <!-- others plugins -->
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
