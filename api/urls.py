@@ -17,4 +17,6 @@ urlpatterns = [
         
         path('police/details/', views.PoliceDetailsView.as_view(), name='police-details'),
 
+        path('hospital/details/', views.HospitalDetailsView.as_view(), name='hospital-details'),
+
 ]
