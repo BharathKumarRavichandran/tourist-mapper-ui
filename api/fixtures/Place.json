@@ -1,0 +1,55 @@
+[{
+    "model": "api.Place",
+    "pk": 1,
+    "fields": {
+		"place_id": 1,
+		"place_name": "Marina Beach",
+		"place_type": "Beach",
+		"latitude": 13.0500,
+		"longitude": 80.2824,
+		"reviews": "Bustling urban beach featuring a long shoreline for basking & a variety of food stalls & shops. - Google",
+		"services_provided": "Food",
+		"crowd_density": 5,
+		"website_url": "",
+		"additional_info": "",
+		"photo_link": "",
+		"is_available": 1
+    }
+},
+{
+    "model": "api.Place",
+    "pk": 2,
+    "fields": {
+		"place_id": 2,
+		"place_name": "Phoenix Marketcity",
+		"place_type": "Mall",
+		"latitude": 12.9904,
+		"longitude": 80.2171,
+		"reviews": "Nice place to walk-in, high class window shopping area... costlier environment",
+		"services_provided": "Food, Shopping",
+		"crowd_density": 10,
+		"website_url": "https://www.phoenixmarketcity.com/chennai",
+		"additional_info": "",
+		"photo_link": "",
+		"is_available": 1
+    }
+},
+{
+    "model": "api.Place",
+    "pk": 1,
+    "fields": {
+		"place_id": 1,
+		"place_name": "Gateway of India",
+		"place_type": "Monument",
+		"latitude": 18.9220,
+		"longitude": 72.8347,
+		"reviews": "Nice place to visit",
+		"services_provided": "Guides",
+		"crowd_density": 8,
+		"website_url": "",
+		"additional_info": "",
+		"photo_link": "",
+		"is_available": 1
+    }
+}
+]

@@ -1,0 +1,40 @@
+[{
+    "model": "api.Volunteer",
+    "pk": 1,
+    "fields": {
+        "volunteer_id": 1,
+		"road_name": "Ranganathar street",
+		"volunteer_name": "Hrishi",
+		"latitude": 13.0405,
+        "longitude": 80.2337,
+		"phone_number": "9522333322",
+		"is_present": 1
+    }
+},
+{
+    "model": "api.Volunteer",
+    "pk": 2,
+    "fields": {
+        "volunteer_id": 2,
+		"road_name": "Velachery main road",
+		"volunteer_name": "Shekhar",
+		"latitude": 12.9760,
+        "longitude": 80.2212,
+		"phone_number": "9323383322",
+		"is_present": 1
+    }
+},
+{
+    "model": "api.Volunteer",
+    "pk": 2,
+    "fields": {
+        "volunteer_id": 2,
+		"road_name": "Ranganathar road",
+		"volunteer_name": "Shekhar",
+		"latitude": 13.0405,
+        "longitude": 80.2337,
+		"phone_number": "9922356322",
+		"is_present": 1
+    }
+}
+]

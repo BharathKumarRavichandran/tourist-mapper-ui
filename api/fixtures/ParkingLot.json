@@ -1,0 +1,37 @@
+[{
+    "model": "api.ParkingLot",
+    "pk": 1,
+    "fields": {
+        "lot_id": 1,
+		"place_name": "Phoenix Mall, Chennai",
+		"latitude": 12.9904,
+        "longitude": 80.2171,
+		"no_of_lots": 20,
+		"slots_occupied": "1,5,6,14,20"
+    }
+},
+{
+    "model": "api.ParkingLot",
+    "pk": 2,
+    "fields": {
+        "lot_id": 2,
+		"place_name": "VR Mall, Chennai",
+		"latitude": 13.0796,
+        "longitude": 80.1978,
+		"no_of_lots": 10,
+		"slots_occupied": "1,2,3,7,9"
+    }
+},
+{
+    "model": "api.ParkingLot",
+    "pk": 3,
+    "fields": {
+        "lot_id": 3,
+		"place_name": "Phoenix Mall, Chennai",
+		"latitude": 19.1412,
+        "longitude": 72.8309,
+		"no_of_lots": 30,
+		"slots_occupied": "1,5,6,14,20,21,26,28"
+    }
+}
+]

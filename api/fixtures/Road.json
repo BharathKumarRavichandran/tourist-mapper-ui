@@ -1,0 +1,28 @@
+[{
+    "model": "api.Road",
+    "pk": 1,
+    "fields": {
+        "road_id": 1,
+		"road_name": "Ranganathar street",
+		"condition": "Good"
+    }
+},
+{
+    "model": "api.Road",
+    "pk": 1,
+    "fields": {
+        "road_id": 1,
+		"road_name": "Velachery main road",
+		"condition": "Average"
+    }
+},
+{
+    "model": "api.Road",
+    "pk": 1,
+    "fields": {
+        "road_id": 1,
+		"road_name": "Gandhi street",
+		"condition": "Average"
+    }
+}
+]
