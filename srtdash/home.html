@@ -28,7 +28,7 @@
 </head>
 
 <style>
-#mapid { height: 500px; }
+#mapid { height: 600px; }
 </style>
 <body>
     <!--[if lt IE 8]>
@@ -83,9 +83,9 @@
                             <span></span>
                         </div>
                         <div class="search-box pull-left">
-                            <form action="#">
-                                <input type="text" name="search" placeholder="Search..." required>
-                                <i class="ti-search"></i>
+                            <form action="">
+                                <input type="text" name="search" id="search_place" placeholder="Search..." required>
+                                <i id= "searchSend" class="ti-search"></i>
                             </form>
                         </div>
                     </div>
@@ -360,8 +360,7 @@ navigator.geolocation.getCurrentPosition(function(postiton) {
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="js/home.js"></script>
-
-
+    <script src="js/maps.js"></script>
 
 </body>
 
