@@ -181,10 +181,7 @@ var appendHospitalDetails = function(){
 							<td>${row["address"]}</td>
 							<td>${ambulance_service}</td>
 						</tr>`
-					);
-					/*var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
-					L.marker(latlng,{icon: hospitalMarker}).addTo(mymap);*/
-						
+					);	
 				}
 			}
 		}
@@ -232,8 +229,6 @@ var appendParkingLotDetails = function(){
 					"color": "#fff"
 				});
 			}
-			var latlng = new L.LatLng(parseFloat(data.latitude), parseFloat(data.longitude));
-			L.marker(latlng,{icon: parkingMarker}).addTo(mymap);
 		}
 	});
 
@@ -274,8 +269,6 @@ var appendPlaceDetails = function(){
 							</div>
 						</div>`
 					);
-					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
-					L.marker(latlng,{icon: guideMarker}).addTo(mymap);		
 				}
 			}
 		}
@@ -309,8 +302,6 @@ var appendPoliceDetails = function(){
 							<td>${row["region"]}</td>
 						</tr>`
 					);
-					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
-					L.marker(latlng,{icon: policeStationMarker}).addTo(mymap);
 				}
 			}
 		}
@@ -344,8 +335,6 @@ var appendGuideDetails = function(){
 							<td>${row["languages_known"]}</td>
 						</tr>`
 					);
-					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
-					L.marker(latlng,{icon: guideMarker}).addTo(mymap);
 				}
 			}
 		}
