@@ -35,6 +35,10 @@ var appendHospitalDetails = function(){
 							<td>${ambulance_service}</td>
 						</tr>`
 					);
+					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
+					L.marker(latlng,{icon: hospitalMarker}).addTo(mymap);
+
+						
 				}
 			}
 		}
@@ -120,6 +124,8 @@ var appendPlaceDetails = function(){
 							</div>
 						</div>`
 					);
+					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
+					L.marker(latlng,{icon: guideMarker}).addTo(mymap);		
 				}
 			}
 		}
@@ -152,6 +158,8 @@ var appendPoliceDetails = function(){
 							<td>${row["region"]}</td>
 						</tr>`
 					);
+					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
+					L.marker(latlng,{icon: policeStationMarker}).addTo(mymap);
 				}
 			}
 		}
@@ -184,12 +192,44 @@ var appendGuideDetails = function(){
 							<td>${row["languages_known"]}</td>
 						</tr>`
 					);
+					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
+					L.marker(latlng,{icon: guideMarker}).addTo(mymap);
 				}
 			}
 		}
 	});
 
 };
+//Icon Definitions
+var hospitalMarker = L.icon({
+	iconUrl: "./assets/images/icons-new/hospital-building.png",
+	iconSize: [38,38],
+	popupAnchor: [-3,-76],
+	shadowSize: [68, 95],
+    shadowAnchor: [22, 94] 
+})
+
+var policeStationMarker = L.icon({
+	iconUrl: "./assets/images/icons-new/police.png",
+	iconSize: [38,38],
+	popupAnchor: [-3,-76],
+	shadowSize: [68, 95],
+    shadowAnchor: [22, 94] 
+})
+var guideMarker = L.icon({
+	iconUrl: "./assets/images/icons-new/guide.png",
+	iconSize: [38,38],
+	popupAnchor: [-3,-76],
+	shadowSize: [68, 95],
+    shadowAnchor: [22, 94] 
+})
+var locationsMarker = L.icon({
+	iconUrl: "./assets/images/icons-new/locations.png",
+	iconSize: [38,38],
+	popupAnchor: [-3,-76],
+	shadowSize: [68, 95],
+    shadowAnchor: [22, 94] 
+})
 
 
 appendHospitalDetails();
