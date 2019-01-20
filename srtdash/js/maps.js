@@ -11,14 +11,6 @@ document.getElementById('search_place').addEventListener('keyup',function(event)
 	  }
 
 });
-
-var myIcon = L.icon({
-    iconUrl: "./assets/images/icons-new/current-loc.png",
-    iconSize: [38, 38],
-    popupAnchor: [-3, -76],
-    shadowSize: [68, 95],
-    shadowAnchor: [22, 94]
-});
     
 var latlng;
 var mymap;
@@ -378,7 +370,13 @@ var parkingMarker = L.icon({
 	shadowSize: [68, 95],
     shadowAnchor: [22, 94] 
 })
-
+var myIcon = L.icon({
+    iconUrl: "./assets/images/icons-new/current-loc.png",
+    iconSize: [33, 33],
+    popupAnchor: [-3, -76],
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94]
+});
 
 appendHospitalDetails();
 appendParkingLotDetails();
