@@ -64,28 +64,49 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 L.marker(latlng,{icon: myIcon}).addTo(mymap);
 
 	for(var i=0;i<hospiData.length;i++){
-		var latlng = new L.LatLng(parseFloat(hospiData[i].latitude), parseFloat(hospiData[i].longitude));
-		L.marker(latlng,{icon: hospitalMarker}).addTo(mymap);
+		var latlng1 = new L.LatLng(parseFloat(hospiData[i].latitude), parseFloat(hospiData[i].longitude));
+		var html = "<h4>" + hospiData[i].hospital_name +" </h4><p>"+ "Address: " + hospiData[i].address+"</p><p>Phone No: " + hospiData[i].phone_number +"</p>";
+		if(hospiData[i].ambulance_service == 1)
+			html += "<p>Ambulance service: Available";
+		else	
+		html += "<p>Ambulance service: Unavailable";
+		L.marker(latlng1,{icon: hospitalMarker}).addTo(mymap).bindPopup(html);
+		// function onMapClick(e){
+		// 	popup.setLatLng(latlng1).setContent(html).openOn(mymap)
+		// }
+		// mymap.on('click',onMapClick);
 	}
 
 	for(var i=0;i<policeData.length;i++){
 		var latlng = new L.LatLng(parseFloat(policeData[i].latitude), parseFloat(policeData[i].longitude));
-		L.marker(latlng,{icon: policeStationMarker}).addTo(mymap);
+		var html = "<h4>Station: "+ policeData[i].station_name + "</h4><p>Region: " + policeData[i].region + "</p><p>Address: "+ policeData[i].address + "</p><p>Phone No:" + policeData[i].phone_number +"</p>";
+		new L.marker(latlng,{icon: policeStationMarker}).addTo(mymap).bindPopup(html);
 	}
 
 	for(var i=0;i<guideData.length;i++){
 		var latlng = new L.LatLng(parseFloat(guideData[i].latitude), parseFloat(guideData[i].longitude));
-		L.marker(latlng,{icon: guideMarker}).addTo(mymap);
+		var html  = "<h4>Guide Name: " + guideData[i].guide_name +"</h4><p>Phone No: " + guideData[i].phone_number + "</p><p>Known Languages: " + guideData[i].languages_known + "<\p>";
+		if(guideData[i].is_active == 1)
+			html += "<p>Active</p>"
+		else
+			html += "<p>Inactive</p>"
+		new L.marker(latlng,{icon: guideMarker}).addTo(mymap).bindPopup(html);
 	}
 
 	for(var i=0;i<locationData.length;i++){
 		var latlng = new L.LatLng(parseFloat(locationData[i].latitude), parseFloat(locationData[i].longitude));
-		L.marker(latlng,{icon: locationsMarker}).addTo(mymap);
+		var html = "<h4>" + locationData[i].place_name +"</h4><p>Services provided: " + locationData[i].services_provided+"</p><p>Crowd Density: " + locationData[i].crowd_density + "</p><p>Reviews: <i>" + locationData[i].reviews + "</i></p>";
+		if(locationData[i].is_available ==  1)
+			html += "<p>Status: <b>Open</b></p>";
+		else	
+			html += "<p>Status: <b>Closed</b></p>"
+		L.marker(latlng,{icon: locationsMarker}).addTo(mymap).bindPopup(html);
 	}
 
 	for(var i=0;i<parkingData.length;i++){
 		var latlng = new L.LatLng(parseFloat(parkingData[i].latitude), parseFloat(parkingData[i].longitude));
-		L.marker(latlng,{icon: parkingMarker}).addTo(mymap);
+		var html = "<h4>Parking Location: " + parkingData[i].place_name + "</h4><p>No of lots: "+ parkingData[i].no_of_lots + "</p><p>Used lots: " + parkingData[i].slots_occupied + "</p>"
+		L.marker(latlng,{icon: parkingMarker}).addTo(mymap).bindPopup(html);
 	}
 
 },  (error) => {
