@@ -56,19 +56,22 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Hospitals</span></a>
+                                <a href="home.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Current Location</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Parking Lots</span></a>
+                                <a href="hospitals.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Hospitals</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Places Nearby</span></a>
+                                <a href="parkinglots.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Parking Lots</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Police Stations</span></a>
+                                <a href="placesnearby.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Places Nearby</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Tourist Guides</span></a>
+                                <a href="policestations.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Police Stations</span></a>
+                            </li>
+                            <li>
+                                <a href="touristguides.html" aria-expanded="true"><i class="ti-dashboard"></i><span>Tourist Guides</span></a>
                             </li>
                         </ul>
                     </nav>
@@ -107,7 +110,7 @@
                         <div class="breadcrumbs-area clearfix">
                             <h4 class="page-title pull-left">Tourist Mapper</h4>
                             <ul class="breadcrumbs pull-left">
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="home.html">Home</a></li>
                             </ul>
                         </div>
                     </div>
@@ -243,85 +246,6 @@
         </footer>
     </div>
     <script>
-// 	var mymap = L.map('mapid').setView([13.011760, 80.221481], 17);
-
-
-
-//     var officeIcon = L.icon({
-//     iconUrl: "./assets/images/icons-new/office-building.png",
-//     iconSize: [38, 38],
-//     iconAnchor: [22, 94],
-//     popupAnchor: [-3, -76],
-//     // shadowUrl: 'my-icon-shadow.png', 
-//     shadowSize: [68, 95],
-//     shadowAnchor: [22, 94]
-//     });
-
-    var myIcon = L.icon({
-    iconUrl: "./assets/images/icons-new/current-loc.png",
-    iconSize: [38, 38],
-    // iconAnchor: [22, 94],
-    popupAnchor: [-3, -76],
-    // shadowUrl: 'my-icon-shadow.png', 
-    shadowSize: [68, 95],
-    shadowAnchor: [22, 94]
-    });
-
-//     var userlat,userlng;
-//     // var marker1 = L.marker([13.011760, 80.221481],{icon: officeIcon}).addTo(mymap);
-//     // marker1.bindPopup("<b style='color:red;'>I am a circle.</b>");
-
-//             navigator.geolocation.watchPosition(showPosition,showError);
-//         } else {
-//            console.log( "Geolocation is not supported by this browser.");
-//         }
-//     }
-
-//     function showPosition(position) {
-//         console.log(position.coords.latitude,position.coords.longitude);
-//         userlat = position.coords.latitude;
-//         userlng = position.coords.longitude;
-//         var userpos = new L.latLng(userlat,userlng);
-//         L.marker(userpos,{icon: myIcon}).addTo(mymap);
-//         console.log(userlat,userlng)
-//     }
-//     // L.marker.locate({setView: true})
-
-//     window.onload = getLocation();
-
-
-
-navigator.geolocation.getCurrentPosition(function(postiton) {
-  var latlng = new L.LatLng(postiton.coords.latitude, postiton.coords.longitude);
-
-  var mymap = L.map('mapid').setView(latlng, 17)
-  L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 20,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox.streets'
-	}).addTo(mymap); 
-
-  var marker = L.marker(latlng,{icon: myIcon}).addTo(mymap);
-},  (error) => {
-    
-    switch(error.code) {
-        case error.PERMISSION_DENIED:
-        console.log( "User denied the request for Geolocation.")
-        break;
-        case error.POSITION_UNAVAILABLE:
-        console.log( "Location information is unavailable.")
-        break;
-        case error.TIMEOUT:
-        console.log( "The request to get user location timed out.")
-        break;
-        case error.UNKNOWN_ERROR:
-        console.log("An unknown error occurred.")
-        break;
-}
-});
-
     // }
     // google.maps.event.addDomListener(window, 'load', initialize);
     </script>
