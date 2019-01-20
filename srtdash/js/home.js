@@ -104,7 +104,6 @@ var appendPlaceDetails = function(){
 				for(var i=0; i<len; i++) {
 					var row = data['data'][i];
 					var photoLink = row['photo_link']!="" ? row['photo_link'] : "assets/images/blog/post-thumb1.jpg";
-					console.log(photoLink);
 					$('#nearbyPlaces').append(
 						`<div class="single-post mb-xs-40 mb-sm-40">
 							<div class="lts-thumb">

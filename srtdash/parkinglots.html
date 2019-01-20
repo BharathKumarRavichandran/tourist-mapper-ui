@@ -73,6 +73,7 @@
                 </div>
             </div>
         </div>
+
         <div class="main-content">
             <div class="header-area">
                 <div class="row align-items-center">
@@ -111,14 +112,52 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="header-title">Parking Lots</h4>
+
+            <div class="col-lg-6 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Parking Lot Availability (Nearest) - <span id="nearestParkingLot"></span></h4>
+                        <div id="ampiechart2"></div>
+                    </div>
+                </div>
+            </div>    
+
+            <div class="col-lg-6 mt-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="header-title">Parking Lot Availability (2nd Nearest) - <span id="nearestParkingLot2"></span></h4>
+                        <div id="ampiechart2_2"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Parking Lots Nearby</h4>
+                    <div class="single-table">
+                        <div class="table-responsive">
+                            <table class="table text-center">
+                                <thead class="text-uppercase bg-warning">
+                                    <tr class="text-white">
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Place Name</th>
+                                        <th scope="col">Total Number Of Lots</th>
+                                        <th scope="col">Lots Occupied </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="parkingLotTable">
+                                    
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+   
         <footer>
             <div class="footer-area">
                 <p>© Copyright 2018. All right reserved. Template by <a href="https://colorlib.com/wp/">Colorlib</a>.</p>
