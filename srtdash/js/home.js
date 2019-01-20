@@ -85,6 +85,8 @@ var appendParkingLotDetails = function(){
 					"color": "#fff"
 				});
 			}
+			var latlng = new L.LatLng(parseFloat(data.latitude), parseFloat(data.longitude));
+			L.marker(latlng,{icon: parkingMarker}).addTo(mymap);
 		}
 	});
 
@@ -225,6 +227,13 @@ var guideMarker = L.icon({
 })
 var locationsMarker = L.icon({
 	iconUrl: "./assets/images/icons-new/locations.png",
+	iconSize: [38,38],
+	popupAnchor: [-3,-76],
+	shadowSize: [68, 95],
+    shadowAnchor: [22, 94] 
+})
+var parkingMarker = L.icon({
+	iconUrl: "./assets/images/icons-new/parkinggarage.png",
 	iconSize: [38,38],
 	popupAnchor: [-3,-76],
 	shadowSize: [68, 95],
