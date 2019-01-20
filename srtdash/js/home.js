@@ -1,4 +1,4 @@
-var serverURL = 'http:localhost:8000/api/';
+/*var serverURL = 'http:localhost:8000/api/';
 
 var lat = 12.9904;
 var lng = 80.2171;
@@ -35,9 +35,9 @@ var appendHospitalDetails = function(){
 							<td>${ambulance_service}</td>
 						</tr>`
 					);
+					console.log(mymap);
 					var latlng = new L.LatLng(parseFloat(row.latitude), parseFloat(row.longitude));
 					L.marker(latlng,{icon: hospitalMarker}).addTo(mymap);
-
 						
 				}
 			}
@@ -245,4 +245,4 @@ appendHospitalDetails();
 appendParkingLotDetails();
 appendPlaceDetails();
 appendPoliceDetails();
-appendGuideDetails();
+appendGuideDetails();*/
