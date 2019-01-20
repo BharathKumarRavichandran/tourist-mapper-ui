@@ -32,6 +32,7 @@ var appendParkingLotDetailsNearest = function(){
 							<td>${row["phone_number"]}</td>
 							<td>${row["address"]}</td>
 							<td>${ambulance_service}</td>
+							<td><button data-toggle='modal' data-target='#exampleModalLong' class="material-raised-button">Avail</button></td>
 						</tr>`
 					);
 				}

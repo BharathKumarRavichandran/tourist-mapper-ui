@@ -29,6 +29,7 @@ var appendPoliceDetails = function(){
 							<td>${row["phone_number"]}</td>
 							<td>${row["address"]}</td>
 							<td>${row["region"]}</td>
+							<td><button data-toggle='modal' data-target='#exampleModalLong' class="material-raised-button">Avail</button></td>
 						</tr>`
 					);
 				}

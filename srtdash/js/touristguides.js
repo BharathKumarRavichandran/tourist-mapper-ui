@@ -30,6 +30,7 @@ var appendGuideDetails = function(){
 							<td>${row["place_name"]}</td>
 							<td>${row["phone_number"]}</td>
 							<td>${row["languages_known"]}</td>
+							<td><button data-toggle='modal' data-target='#exampleModalLong' class="material-raised-button">Avail</button></td>
 						</tr>`
 					);
 				}
