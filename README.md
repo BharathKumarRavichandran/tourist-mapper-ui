@@ -1,4 +1,5 @@
-# TouristMapper
+# Tourist Mapper
+The API for Tourist Mapper
 
 ### Prerequisites
 * Install Python
