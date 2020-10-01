@@ -1,0 +1,43 @@
+[{
+    "model": "api.PoliceStation",
+    "pk": 1,
+    "fields": {
+        "station_id": 1,
+		"station_name": "Office Of The Joint Commissioner Of Police",
+		"latitude": 13.0100,
+        "longitude": 80.1991,
+		"zone": "Chennai",
+		"region": "Chennai",
+		"phone_number": "04422333322",
+		"address": " South Zone, Police Office street St, Binny Rd, Nizarathipuram, Gandhi Nagar, Chennai, Tamil Nadu 600016"
+    }
+},
+{
+    "model": "api.PoliceStation",
+    "pk": 2,
+    "fields": {
+        "station_id": 2,
+		"station_name": "S1 St. Thomas Mount",
+		"latitude": 12.9992,
+        "longitude": 80.2000,
+		"zone": "Thomas Mount",
+		"region": "Chennai",
+		"phone_number": "04423452763",
+		"address": "Railway Station Road, Alandur, Chennai, Tamil Nadu 600016"
+    }
+},
+{
+    "model": "api.PoliceStation",
+    "pk": 3,
+    "fields": {
+        "station_id": 3,
+		"station_name": "Andheri Police Station",
+		"latitude": 19.1205,
+        "longitude": 72.8482,
+		"zone": "Andheri",
+		"region": "Chennai",
+		"phone_number": "04422335322",
+		"address": " South Zone, Police Office street St, Binny Rd, Nizarathipuram, Gandhi Nagar, Chennai, Tamil Nadu 600016"
+    }
+}
+]

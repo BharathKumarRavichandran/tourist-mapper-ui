@@ -1,0 +1,43 @@
+[{
+    "model": "api.Hospital",
+    "pk": 1,
+    "fields": {
+        "hospital_id": 1,
+		"hospital_name": "Apollo",
+		"latitude": 12.9787,
+        "longitude": 80.2250,
+		"zone": "Chennai",
+		"address": "Apollo Hospital, Chennai",
+		"phone_number": "9696596965",
+		"ambulance_service": 1
+    }
+},
+{
+    "model": "api.Hospital",
+    "pk": 2,
+    "fields": {
+        "hospital_id": 2,
+		"hospital_name": "Global Hospital",
+		"latitude": 18.9995,
+        "longitude": 72.8409,
+		"zone": "Mumbai",
+		"address": "Global Hospital, Mumbai",
+		"phone_number": "9636498965",
+		"ambulance_service": 1
+    }
+},
+{
+    "model": "api.Hospital",
+    "pk": 3,
+    "fields": {
+        "hospital_id": 3,
+		"hospital_name": "Global Hospital",
+		"latitude": 13.0827,
+        "longitude": 80.2707,
+		"zone": "Chennai",
+		"address": "Global Hospital, Chennai",
+		"phone_number": "7645956965",
+		"ambulance_service": 1
+    }
+}
+]

@@ -1,0 +1,71 @@
+[{
+    "model": "api.Guide",
+    "pk": 1,
+    "fields": {
+        "guide_id": 1,
+        "guide_name": "John",
+        "place_name": "Chennai",
+        "latitude": 13.0827,
+        "longitude": 80.2707,
+        "phone_number": "9999955555",
+        "languages_known": "English, Tamil, Hindi",
+        "is_active": 1
+    }
+},
+{
+    "model": "api.Guide",
+    "pk": 2,
+    "fields": {
+        "guide_id": 2,
+        "guide_name": "Ajay",
+        "place_name": "Trichy",
+        "latitude": 10.7905,
+        "longitude": 78.7047,
+        "phone_number": "9492430965",
+        "languages_known": "English, Tamil",
+        "is_active": 1
+    }
+},
+{
+    "model": "api.Guide",
+    "pk": 3,
+    "fields": {
+        "guide_id": 3,
+        "guide_name": "Hari",
+        "place_name": "New Delhi",
+        "latitude": 28.6139,
+        "longitude": 77.2090,
+        "phone_number": "9929357455",
+        "languages_known": "English, Tamil, Hindi",
+        "is_active": 1
+    }
+},
+{
+    "model": "api.Guide",
+    "pk": 4,
+    "fields": {
+        "guide_id": 4,
+        "guide_name": "Narayanan",
+        "place_name": "Delhi",
+        "latitude": 28.6139,
+        "longitude": 77.2090,
+        "phone_number": "9993955555",
+        "languages_known": "English, Tamil, Hindi",
+        "is_active": 0
+    }
+},
+{
+    "model": "api.Guide",
+    "pk": 5,
+    "fields": {
+        "guide_id": 5,
+        "guide_name": "Vishal",
+        "place_name": "Mumbai",
+        "latitude": 19.0760,
+        "longitude": 72.8777,
+        "phone_number": "9670090345",
+        "languages_known": "English, Tamil, Hindi",
+        "is_active": 1
+    }
+}
+]
